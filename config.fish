@@ -13,6 +13,7 @@ alias ec='emacsclient'
 alias vi='nvim'
 alias nodejs='node'
 alias please='sudo'
+alias slp='systemctl suspend'
 
 set PATH $PATH /home/dawn/.local/bin
 set PATH $PATH ~/.emacs.d/bin
