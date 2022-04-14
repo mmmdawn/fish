@@ -9,16 +9,18 @@ set PATH $PATH /home/dawn/.local/bin
 set PATH $PATH /home/dawn/.screenlayout
 set PATH $PATH /home/dawn/TRAVA.FINANCE/arangodb3-linux-3.9.0/bin
 
-set TOKEN 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
-set TRADAO_BOT_TOKEN 5115513193:AAEXNOCM6X0u7M-nKsMtrtFvYqXlkM4b5Gc
-set MONGO mongodb://reader_bsc:travareaderbsc@128.199.149.45:27017
-set ARANGO 22222
-
 # sudo !! 
 function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
     if test "$argv" = !!
     eval command sudo $history[1]
 else
     command sudo $argv
+    end
+end
+
+# Start X at login
+if status is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        exec startx -- -keeptty
     end
 end
